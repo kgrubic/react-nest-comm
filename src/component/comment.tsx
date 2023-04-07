@@ -4,14 +4,16 @@ import { addComment } from "../features/comment/commentSlice";
 
 import { CommentState, CommentProps } from "../features/comment/commentSlice";
 
+import styles from './comments.module.css';
+
 export const AddComment = ({parentId = '1'}) => {
     const dispatch = useAppDispatch();
 
     const [text, setText] = useState('');
     return (
         <div>
-            <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
-            <button onClick={ () =>  { dispatch(addComment( text, parentId )); setText('')}}>Add comment {parentId}</button>
+            <textarea className={styles.commentTextare} placeholder="comment" value={text} onChange={(e) => setText(e.target.value)}/>
+            <button className={styles.commentButton} onClick={ () =>  { dispatch(addComment( text, parentId )); setText('')}}>Add comment {parentId}</button>
         </div>
     )
 }

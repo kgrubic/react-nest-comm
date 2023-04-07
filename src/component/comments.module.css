@@ -1,0 +1,10 @@
+.commentButton {
+    border: none;
+    background: none;
+    text-decoration: underline;
+}
+
+.commentTextare {
+    border-radius: 8px;
+    background-color: #dcf1f5;
+}
